@@ -1,23 +1,22 @@
 <?php
 /**
- * Eadrax application/classes/Context/User/Login/Repository.php
+ * Eadrax/Repository-MySQL User/Login.php
  *
- * @package   Context
+ * @package   Repository
  * @author    Dion Moult <dion@thinkmoult.com>
  * @copyright (c) 2012 Dion Moult
  * @license   ISC http://opensource.org/licenses/isc-license.txt
  * @link      http://wipup.org/
  */
 
-defined('SYSPATH') OR die('No direct script access.');
+namespace Eadrax\Repository\User;
 
 /**
  * Handles persistance during user registration.
  *
- * @package    Context
- * @subpackage Repository
+ * @package Repository
  */
-class Context_User_Login_Repository
+class Login
 {
     /**
      * For MySQL user table interactions.

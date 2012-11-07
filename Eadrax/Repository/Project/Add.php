@@ -1,23 +1,22 @@
 <?php
 /**
- * Eadrax application/classes/Context/Project/Add/Repository.php
+ * Eadrax/Repository-MySQL Project/Add.php
  *
- * @package   Context
+ * @package   Repository
  * @author    Dion Moult <dion@thinkmoult.com>
  * @copyright (c) 2012 Dion Moult
  * @license   ISC http://opensource.org/licenses/isc-license.txt
  * @link      http://wipup.org/
  */
 
-defined('SYSPATH') OR die('No direct script access.');
+namespace Eadrax\Repository\Project;
 
 /**
  * Handles persistance during adding a project.
  *
- * @package    Context
- * @subpackage Repository
+ * @package    Repository
  */
-class Context_Project_Add_Repository
+class Add
 {
     /**
      * For MySQL project table interactions.
