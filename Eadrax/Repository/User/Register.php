@@ -26,7 +26,7 @@ class Register implements Repository
             'username',
             'password',
             'email'
-        ))->value(array(
+        ))->values(array(
             $data_user->username,
             \Auth::instance()->hash($data_user->password),
             $data_user->email
