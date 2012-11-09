@@ -18,47 +18,24 @@ namespace Eadrax\Repository\User;
  */
 class Register
 {
-    /**
-     * For MySQL user table interactions.
-     * @var Gateway_User
-     */
-    public $gateway_mysql_user;
-
-    /**
-     * Sets up DAOs
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->gateway_mysql_user = new Gateway_MySQL_User;
-    }
-
-    /**
-     * Saves a user in the database
-     *
-     * @param Model_User $model_user The user to save
-     * @return void
-     */
     public function register($model_user)
     {
-        $this->gateway_mysql_user->insert(array(
-            'username' => $model_user->username,
-            'password' => $model_user->password,
-            'email' => $model_user->email
+        $query = DB::insert('users', array(
+            'username',
+            'password',
+            'email'
+        ))->value(array(
+            $model_user->username,
+            Auth::instance()->hash($model_user->password),
+            $model_user->email
         ));
+        $query->execute();
     }
 
-    /**
-     * Checks whether or not a username is unique
-     *
-     * @param string $username The username to check
-     * @return bool
-     */
     public function is_unique_username($username)
     {
-        return ! $this->gateway_mysql_user->exists(array(
-            'username' => $username
-        ));
+        $query = DB::select('id')->from('users')->limit(1)
+            ->where('username', '=', $username);
+        return (bool) ! $query->execute()->count();
     }
 }
