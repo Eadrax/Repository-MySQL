@@ -10,13 +10,14 @@
  */
 
 namespace Eadrax\Repository\Project;
+use Eadrax\Eadrax\Context\Project\Add\Repository;
 
 /**
  * Handles persistance during adding a project.
  *
  * @package    Repository
  */
-class Add
+class Add implements Repository
 {
     public function add_project($model_project)
     {

@@ -10,13 +10,14 @@
  */
 
 namespace Eadrax\Repository\User;
+use Eadrax\Eadrax\Context\User\Login\Repository;
 
 /**
  * Handles persistance during user registration.
  *
  * @package    Repository
  */
-class Register
+class Register implements Repository
 {
     public function register($model_user)
     {

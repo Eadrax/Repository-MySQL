@@ -10,13 +10,14 @@
  */
 
 namespace Eadrax\Repository\User;
+use Eadrax\Eadrax\Context\User\Login\Repository;
 
 /**
  * Handles persistance during user registration.
  *
  * @package Repository
  */
-class Login
+class Login implements Repository
 {
     public function is_existing_account($username, $password)
     {
