@@ -11,6 +11,7 @@
 
 namespace Eadrax\Repository\User;
 use Eadrax\Eadrax\Context\User\Login\Repository;
+use Eadrax\Eadrax\Data;
 
 /**
  * Handles persistance during user registration.
@@ -19,16 +20,16 @@ use Eadrax\Eadrax\Context\User\Login\Repository;
  */
 class Register implements Repository
 {
-    public function register($model_user)
+    public function register(Data\User $data_user)
     {
         $query = \DB::insert('users', array(
             'username',
             'password',
             'email'
         ))->value(array(
-            $model_user->username,
-            \Auth::instance()->hash($model_user->password),
-            $model_user->email
+            $data_user->username,
+            \Auth::instance()->hash($data_user->password),
+            $data_user->email
         ));
         $query->execute();
     }

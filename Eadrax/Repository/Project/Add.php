@@ -11,6 +11,7 @@
 
 namespace Eadrax\Repository\Project;
 use Eadrax\Eadrax\Context\Project\Add\Repository;
+use Eadrax\Eadrax\Data;
 
 /**
  * Handles persistance during adding a project.
@@ -19,16 +20,16 @@ use Eadrax\Eadrax\Context\Project\Add\Repository;
  */
 class Add implements Repository
 {
-    public function add_project($model_project)
+    public function add_project(Data\Project $data_project)
     {
         $query = \DB::insert('projects', array(
             'name',
             'summary',
             'uid'
         ))->values(array(
-            $model_project->name,
-            $model_project->summary,
-            $model_project->author->id
+            $data_project->name,
+            $data_project->summary,
+            $data_project->author->id
         ));
         $query->execute();
     }
