@@ -10,7 +10,7 @@
  */
 
 namespace Eadrax\Repository\User;
-use Eadrax\Eadrax\Context\User\Login\Repository;
+use Eadrax\Eadrax\Context\User\Register\Repository;
 use Eadrax\Eadrax\Data;
 
 /**
