@@ -21,9 +21,9 @@ class Login implements Repository
 {
     public function is_existing_account($username, $password)
     {
-        $query = DB::select('id')->from('users')->limit(1)
+        $query = \DB::select('id')->from('users')->limit(1)
             ->where('username', '=', $username)
-            ->where('password', '=', Auth::instance()->hash($password));
+            ->where('password', '=', \Auth::instance()->hash($password));
         return (bool) $query->execute()->count();
     }
 }

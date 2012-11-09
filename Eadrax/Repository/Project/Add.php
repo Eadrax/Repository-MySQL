@@ -21,7 +21,7 @@ class Add implements Repository
 {
     public function add_project($model_project)
     {
-        $query = DB::insert('projects', array(
+        $query = \DB::insert('projects', array(
             'name',
             'summary',
             'uid'

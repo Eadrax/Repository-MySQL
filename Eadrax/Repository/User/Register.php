@@ -21,13 +21,13 @@ class Register implements Repository
 {
     public function register($model_user)
     {
-        $query = DB::insert('users', array(
+        $query = \DB::insert('users', array(
             'username',
             'password',
             'email'
         ))->value(array(
             $model_user->username,
-            Auth::instance()->hash($model_user->password),
+            \Auth::instance()->hash($model_user->password),
             $model_user->email
         ));
         $query->execute();
@@ -35,7 +35,7 @@ class Register implements Repository
 
     public function is_unique_username($username)
     {
-        $query = DB::select('id')->from('users')->limit(1)
+        $query = \DB::select('id')->from('users')->limit(1)
             ->where('username', '=', $username);
         return (bool) ! $query->execute()->count();
     }
