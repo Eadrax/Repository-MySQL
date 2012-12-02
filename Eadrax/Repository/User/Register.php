@@ -10,8 +10,8 @@
  */
 
 namespace Eadrax\Repository\User;
-use Eadrax\Eadrax\Context\User\Register\Repository;
-use Eadrax\Eadrax\Data;
+use Eadrax\Core\Context\User\Register\Repository;
+use Eadrax\Core\Data;
 
 /**
  * Handles persistance during user registration.

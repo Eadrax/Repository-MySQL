@@ -10,7 +10,7 @@
  */
 
 namespace Eadrax\Repository\User;
-use Eadrax\Eadrax\Context\User\Login\Repository;
+use Eadrax\Core\Context\User\Login\Repository;
 
 /**
  * Handles persistance during user registration.

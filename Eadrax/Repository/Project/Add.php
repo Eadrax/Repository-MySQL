@@ -10,8 +10,8 @@
  */
 
 namespace Eadrax\Repository\Project;
-use Eadrax\Eadrax\Context\Project\Add\Repository;
-use Eadrax\Eadrax\Data;
+use Eadrax\Core\Context\Project\Add\Repository;
+use Eadrax\Core\Data;
 
 /**
  * Handles persistance during adding a project.
